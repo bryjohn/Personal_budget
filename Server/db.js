@@ -1,3 +1,5 @@
+//mock database meant to store array of envelopes
+//each envelope object has: id,title,and budget
 const envelopeArray =  [
     {
       id: 1,
