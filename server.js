@@ -1,15 +1,16 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 
+app.use(bodyParser.json());
 module.exports = app;
 
 const PORT = process.env.PORT || 3000;
 
+//mount envelope router
+const envelopeRouter = require('./server/envelopes');
+app.use('/', envelopeRouter);
 
-//test endpoint to see if server is functioning
-app.get('/', (req,res,next) => {
-  res.send("Hello World");
-});
 
 if (!module.parent) { 
   app.listen(PORT, () => {
