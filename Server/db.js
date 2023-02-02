@@ -58,7 +58,7 @@ const updateDb = (title, budget, id) => {
       record.budget = parseInt(budget);
     }
   }
-  return record //envelopeArray.at(record.id - 1);
+  return record;
 }
 
 const transferEnvelope = (fromId, toId, amount) => {
