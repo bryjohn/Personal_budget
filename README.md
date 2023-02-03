@@ -3,7 +3,7 @@
 This project is an API that allows clients to create and manage a personal budget using envelope budgeting principles. 
 Envelope budgeting is the idea of grouping spending into groups or envelopes(ie "rent", "groceries, "entertainment") 
 and assign a budget for each group. Clients are able to create, display, update, and delete envelopes. As well as transfer 
-a budget of one envelope to another. TODO: Keep track of overall budget and make sure it is not exceeded.
+a budget of one envelope to another. 
 ## Technologies 
 This project was created with:
  + javaScript version: ES6
