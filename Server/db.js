@@ -1,8 +1,4 @@
 //mock database meant to store array of envelopes
-
-const { env } = require("process");
-const { param } = require("./envelopes");
-
 //each envelope object has: id,title,and budget
 const envelopeArray =  [
     {
@@ -38,7 +34,9 @@ const findById = (id) => {
 const deleteById = (id) => {
   const record = findById(id);
   if(record){
-    envelopeArray.splice(envelopeArray.indexOf(record));
+    const index = envelopeArray.indexOf(record);
+    envelopeArray.splice(index,1);
+    console.log(envelopeArray);
     console.log("Envelope deleted")
   }
   return record;
@@ -61,10 +59,10 @@ const updateDb = (title, budget, id) => {
   return record;
 }
 
+//move portion/all of budget in one envelope to another
 const transferEnvelope = (fromId, toId, amount) => {
   const from = findById(fromId);
   const to = findById(toId);
-  console.log(amount);
 
   if(from && to) {
     //budget cannot be less than zero
@@ -76,7 +74,7 @@ const transferEnvelope = (fromId, toId, amount) => {
     if(from.budget < amount){
       to.budget += from.budget;
       from.budget -= from.budget;     
-      console.log("Transfer successful 2");
+      console.log("Transfering all of envelope");
     }
     
   }
